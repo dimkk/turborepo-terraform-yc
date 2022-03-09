@@ -1,0 +1,21 @@
+{
+    "name": "ftp-dev",
+    "version": "1.0.1",
+    "description": "",
+    "main": "dist/",
+    "scripts": {
+        "build": "tsc -p ./",
+        "zip": "cd ./build && zip ../function.zip -r ./ && cd ../ && mv function.zip ../infra/api/function.zip",
+        "bump": "yarn version --patch && echo $npm_package_version",
+        "deploy": "cd ../infra/api && terraform apply $npm_package_version"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^14.0.12",
+        "typescript": "^3.9.5"
+    },
+    "dependencies": {
+        "yandex-cloud-functions-router": "^1.2.0"
+    }
+}
