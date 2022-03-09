@@ -31,3 +31,11 @@ yarn-error.log*
 
 # turbo
 .turbo
+
+#yc
+packages/infra/key.json
+
+#tf
+.terraform
+terraform.tfstate
+terraform.tfstate.backup

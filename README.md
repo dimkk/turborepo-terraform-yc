@@ -1,4 +1,25 @@
-# Turborepo starter
+# Turborepo yandex cloud starter starter
+
+## What's inside?
+
+-   ./packages/api - serverless function with yandex-cloud-functions-router, with TS and ava test runner
+-   yarn upload, to build and deploy everything (after initial setup)
+-   ./packages/infra/\* - serverless and s3 buckets for yandex cloud, using terraform provider
+
+## Initial setup
+
+-   [create SA](https://cloud.yandex.com/en-ru/docs/iam/concepts/users/service-accounts)
+-   add admin rights
+-   [create key.json](https://cloud.yandex.com/en/docs/iam/quickstart-sa), put it in ./packages/infra
+-   go to ./packages/infra/api (and sites)
+
+```sh
+terraform init
+terraform apply
+```
+
+-   open ./packages/infra/sites/terraform.tfstate -> find yandex_storage_bucket -> copy access_key and secret_key to ~/.bashrc using ./.env.example as template
+-   you are set! you can test yarn upload in root dir - docs and main site will be exported, serverless function will be uploaded
 
 This is an official Yarn v1 starter turborepo.
 
@@ -8,11 +29,11 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+-   `docs`: a [Next.js](https://nextjs.org) app
+-   `web`: another [Next.js](https://nextjs.org) app
+-   `ui`: a stub React component library shared by both `web` and `docs` applications
+-   `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+-   `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -20,9 +41,9 @@ Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 This turborepo has some additional tools already setup for you:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+-   [TypeScript](https://www.typescriptlang.org/) for static type checking
+-   [ESLint](https://eslint.org/) for code linting
+-   [Prettier](https://prettier.io) for code formatting
 
 ## Setup
 
@@ -69,9 +90,9 @@ npx turbo link
 
 Learn more about the power of Turborepo:
 
-- [Pipelines](https://turborepo.org/docs/features/pipelines)
-- [Caching](https://turborepo.org/docs/features/caching)
-- [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/features/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+-   [Pipelines](https://turborepo.org/docs/features/pipelines)
+-   [Caching](https://turborepo.org/docs/features/caching)
+-   [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching)
+-   [Scoped Tasks](https://turborepo.org/docs/features/scopes)
+-   [Configuration Options](https://turborepo.org/docs/reference/configuration)
+-   [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
