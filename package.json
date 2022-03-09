@@ -1,5 +1,5 @@
 {
-    "name": "turborepo-terrafor-yc",
+    "name": "turborepo-terraform-yc",
     "version": "1.0.0",
     "private": true,
     "workspaces": [
